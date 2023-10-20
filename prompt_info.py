@@ -138,5 +138,29 @@ class ExtractInfo():
             return (thing, flt, None)
 
         return (thing, flt, nt)
+    
+class HuntInfo():
+    CATEGORY = "prompt_info"
+    FUNCTION = "func"
+    OUTPUT_NODE = True
 
-CLAZZES = [AddInfo, LoadImageWithInfo, ExtractInfo]
+    @classmethod    
+    def INPUT_TYPES(s):
+        return {"required": {
+            "info": ("STRING", {"forceInput": True}), 
+        }, "hidden": {"id":"UNIQUE_ID"}}
+
+    RETURN_TYPES = ()
+    RETURN_NAMES = ()
+    def func(self, info, id):
+        try:
+            thing = json.loads(info)
+            PromptServer.instance.send_sync("cg.prompt_info.thingmessage", {"id": id, "message":thing})
+        except json.JSONDecodeError:
+            print("JSONDecodeError")
+
+        return ()
+        
+
+
+CLAZZES = [AddInfo, LoadImageWithInfo, ExtractInfo, HuntInfo]

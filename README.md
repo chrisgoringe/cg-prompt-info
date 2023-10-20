@@ -24,6 +24,8 @@ That's where the first two nodes come in. Load an image using the `Load Image Wi
 
 The outputs of the `Extract Info` node contain the displayed value as a string, and, if it can be parsed, as a float and an int - so you can use the values you've extracted.
 
+To see what information is available more conveniently, use the `Hunt Info` node instead.
+
 ## *Adding more info
 
 You'll quickly notice that only input values are available, and then only if they were widgets (not inputs). That's all that's stored in the prompt - it's all Comfy needed to do the run. But what if the prompt depended on external files that might have changed, or used random numbers? Or had some really complicated flow so it's hard to get the information you want?
