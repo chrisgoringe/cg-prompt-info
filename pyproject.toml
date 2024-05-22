@@ -1,0 +1,14 @@
+[project]
+name = "cg-prompt-info"
+description = "Prompt Info"
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/chrisgoringe/cg-prompt-info"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "cg-prompt-info"
+Icon = ""
